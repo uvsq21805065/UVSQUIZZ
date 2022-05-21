@@ -1,0 +1,19 @@
+h5 {
+    color: black;
+    background-color: white;
+  }
+
+
+p {
+    color: black;
+    background-color: white;
+}
+
+a{
+    font-size : 20px;
+    text-align :center;
+    font-weight: bold;
+    /* margin-top: 100px; */
+    background-color: beige;
+    color: black;
+  }

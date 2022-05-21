@@ -1,0 +1,135 @@
+.logo {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.39);
+    color: inherit !important;
+    text-decoration: none !important;
+    border-bottom: 1px solid #e65116;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 2px 3px 10px rgba(236, 30, 30, 0.1);
+  }
+  
+  .logo span {
+      text-align: center;
+      font-weight: bold;
+  }
+  
+  .logo span:before {
+      content: "// ";
+      color: #ed2164;
+  }
+  
+  .q{ border: 1px solid black; padding: 5px; }
+  
+  .container {
+    margin-top: 100px;
+  }
+  
+  @media only screen and (min-width: 768px) {
+    .container-fluid {
+        min-height: 800px;
+    }
+  }
+  
+  .description {
+    max-width: 800px;
+    margin: 0 auto 40px;
+    padding: 0 10px;
+  }
+  
+  .code-wrapper {
+    overflow-x: auto;
+  }
+  
+  .snippet {
+      box-shadow: 2px 3px 10px rgba(235, 10, 10, 0.945);
+      width: 717px;
+      border-color: #e72f2f;
+      min-height: 400px;
+  }
+  
+  .button-container {
+      margin: 0 auto;
+      max-width: 600px;
+  }
+  
+  .btn { display:inline-block; }
+  .btn.wrong,.btn.correct {
+      background-repeat:no-repeat;
+      background-position:left 20px center;
+      background-size:30px;
+  }
+  
+  .btn.wrong {
+      background-color: #ec6464;
+      border-color: #d84a4a;
+  }
+  
+  .btn.correct {
+      background-color: #93e462;
+      border-color: #57c55a !important;
+  }
+  
+  .spacer {
+    margin-bottom:100px;
+  }
+  
+  .btn-circle.btn-xl {
+      width: 70px;
+      height: 70px;
+      padding: 10px 16px;
+      border-radius: 35px;
+      font-size: 24px;
+      line-height: 1.33;
+      background-repeat: no-repeat;
+      background-position:center;
+      background-size:cover;
+      margin: 0px 4px;
+  }
+    
+  .btn-circle {
+      width: 30px;
+      height: 30px;
+      padding: 6px 0px;
+      border-radius: 15px;
+      text-align: center;
+      font-size: 12px;
+      line-height: 1.42857;
+  }
+  
+  .final-message {
+    display:none;
+    box-shadow: 2px 3px 10px rgba(98, 168, 247, 0.1);
+    border: 1px solid #eee;
+    max-width: 800px;
+    margin: 50px auto;
+    border-radius: 5px;
+  }
+  
+  .plug {
+    margin: 30px auto 0;
+    max-width: 400px;
+  }
+  
+  .plug a {
+    background-color: #f4faff;
+    font-size: 18px;
+    padding: 3px 10px;
+  }
+  
+  a{
+    /** Ces directives indiquent au lien de ressembler à un bouton pour les principaux moteurs de rendu **/
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+    /**Les directives en dessous enlèvent l'apparence par défaut en bleu et avec du texte souligné pour un lien hypertexte **/
+    text-decoration: none;
+    color: initial;
+   }
+ 
+  
+  
