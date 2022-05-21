@@ -34,7 +34,7 @@
 	 res.render('index',{questions:JSON.stringify(q), answers:JSON.stringify(answers)});
 	});
 
-	app.listen(3000);
+	app.listen(8000);
 	console.log("Ouvert sur localhost:3000");
 	 
 	
