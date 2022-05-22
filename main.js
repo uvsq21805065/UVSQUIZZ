@@ -81,7 +81,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	{	
 		let indice = 0;
 		
-		if (selected || level == 15) {
+		if (selected || level == 16) {
 			return;
 		}
 
