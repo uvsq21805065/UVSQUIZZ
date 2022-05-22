@@ -34,8 +34,12 @@
 	 res.render('index',{questions:JSON.stringify(q), answers:JSON.stringify(answers)});
 	});
 
+	app.get("/Sablier", (req, res) => {
+	 res.render('indexsablier',{questions:JSON.stringify(q), answers:JSON.stringify(answers)});
+	});
+
 	app.listen(8000);
-	console.log("Ouvert sur localhost:3000");
+	console.log("Ouvert sur localhost:8000");
 	 
 	
 	async function sequentialQueries () {
@@ -161,3 +165,47 @@
 		}
 		return false;
 	}
+
+	//////////////////////////ANTI FAILLES DE SECURITE/////////////////////////////////////////////////////////////////////////////////////
+
+	app.use(helmet());
+	app.use(express.static('public'));
+
+	//sécurit de contenu
+	app.use(helmet.contentSecurityPolicy({
+		directives: {
+			frameAncestors:["'self'"],
+		}
+	}));
+
+	//empêcher le vol de session
+	const session = require('cookie-session')
+	var expiryDate = new Date(Date.now() + 60 * 60 * 1000) // 1 hour
+	app.use(session({
+		name: 'toto',
+		keys: ['key1', 'key2'],
+		cookie: {
+			secure: true,
+			httpOnly: true,
+			path: 'foo/bar',
+			expires: expiryDate
+		}
+	}));
+
+
+	//masquer l'en-tête Referer
+	app.use(helmet.referrerPolicy({ policy: 'same-origin' }));//
+	//empêche les navigateurs d'essayer de deviner ("sniff") le type MIME
+	app.use(helmet.noSniff());
+	//supprimer l'en-tête X-Powered-By
+	app.use(helmet.hidePoweredBy());
+	//anticickjajing
+	app.use(helmet.frameguard({ action: 'sameorigin' }));
+	//failles xss
+	app.use(helmet.xssFilter());
+	//partie envoyant l’utilisateur dans la zone sécurisée
+	var express_enforces_ssl = require('express-enforces-ssl');
+	app.use(express_enforces_ssl());
+	// forcer le navigateur à communiquer en https de manière privilégié avec le serveur
+	var sixtyDaysInSeconds = 5184000;
+	app.use(helmet.hsts({ maxAge: sixtyDaysInSeconds }));

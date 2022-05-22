@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Le Sablier</title>
+  
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
+
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+ <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+ <script type="text/javascript" src="mainsablier.js" ></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-531949-22"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-531949-22');
+  </script>
+    
+  
+</head>
+<body>
+     <div id="answers" style="display:none;">
+    <%= answers %>
+     </div>
+
+   <div id="questions" style="display:none;">
+    <%= questions %>
+   </div>
+
+    
+<div class="container text-center">
+  <div class="quizbox">
+    <h2 class="mt-5 mb-5 font-weight-bold">Bonne chance et amusez vous bien.</h2>
+    <p class="description">Voici les questions :
+    
+    <br>
+    <br>
+    <span class="q" id="question">Est ce que vous etes pret ?</span>;
+    <p id="countdown">  </p>
+    
+    <div class="container-fluid">
+      <div class="code-wrapper">
+      </div>
+      <div class="button-container pb-5">
+        
+        <h5 class="m-4">
+            <b id="current">0</b>
+        </h5>
+        <div class="options mb-4"></div>
+       
+       <div id="proceed" class="btn btn-primary w-50 rounded-0 border-0 p-2">Next</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="final-message p-2 p-md-5">
+    
+    <h3 class="mt-3 font-weight-bold">Vous avez <b id="guessed">0</b> bonnes réponses</h3>
+    <h6 class="mt-3 text-muted mb-4 text-uppercase">Vous ferez mieux la prochaine fois.</h6>
+    <a href ="/">Menu</a>
+  </div>
+  
+</div>
+
+</body>
+</html>

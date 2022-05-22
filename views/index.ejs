@@ -23,6 +23,16 @@
       
     
   </head>
+  <style id="antiClickjack">body{display:none !important;}</style>
+       <script type="text/javascript">
+     if (self === top) {
+         var antiClickjack = document.getElementById("antiClickjack");
+         antiClickjack.parentNode.removeChild(antiClickjack);
+     } else {
+         top.location = self.location;
+     }
+      </script>
+
   <body>
   	 <div id="answers" style="display:none;">
       <%= answers %>
@@ -49,7 +59,7 @@
         <div class="button-container pb-5">
   		
           <h5 class="m-4">
-  			<b id="current">0</b> out of <b>15</b>
+  			<b id="current">0</b> sur <b>15</b>
   		</h5>
           <div class="options mb-4"></div>
          
@@ -60,7 +70,7 @@
 
     <div class="final-message p-2 p-md-5">
       
-      <h3 class="mt-3 font-weight-bold">Vous avez <b id="guessed">0</b> bonne réponses sur <b>15</b> questions !</h3>
+      <h3 class="mt-3 font-weight-bold">Vous avez <b id="guessed">0</b> bonnes réponses sur <b>15</b> questions !</h3>
       <h6 class="mt-3 text-muted mb-4 text-uppercase">Vous ferez mieux la prochaine fois.</h6>
       <a href ="/">Menu</a>
     </div>
