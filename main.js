@@ -81,7 +81,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	{	
 		let indice = 0;
 		
-		if (selected || level == 16) {
+		if (selected || level == 15) {
 			return;
 		}
 
@@ -123,7 +123,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
 		selected = false;
 		level++;
+		
 		alea = Math.floor(Math.random() * question.length);
+    
+   		while(alea === 0) alea = Math.floor(Math.random() * question.length);
 		
 		if (level==16) {
 			finish();

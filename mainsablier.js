@@ -122,7 +122,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
 		selected = false;
 		level++;
+
 		alea = Math.floor(Math.random() * question.length);
+    
+    	while(alea === 0) alea = Math.floor(Math.random() * question.length);
 
 		if (level==1){
             const startingMinutes = 1;
